@@ -24,6 +24,11 @@ posts = Post.all
   )
 end
 
+Post.create_with(body: "New Body for a New Post").find_or_create_by(title: "New Title for a New Post")
+Post.create_with(body: "Another new body.").find_or_create_by(title: "Another new post title")
+Post.create_with(body: "So many bodys!").find_or_create_by(title: "So many titles!")
+Post.create_with(body: "Just one more body.").find_or_create_by(title: "Just one more title")
+
 puts "Seed finished"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
