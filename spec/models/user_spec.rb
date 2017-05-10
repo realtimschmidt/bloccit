@@ -21,6 +21,12 @@ RSpec.describe User, type: :model do
     it "should have name and email attributes" do
       expect(user).to have_attributes(name: "Bloccit User", email: "user@bloccit.com")
     end
+
+    it "should capitalize first and last name" do
+      user.name = "bloccit user"  #help from video - I see this is setting the data for this test
+      user.save  #help from video - save has been completed
+      expect(user.name).to eq "Bloccit User"  #I got this part on my own. I forgot to create data for this "it block" and I didn't know how to tell the "it block" to save
+    end
   end
 
   describe "invalid user" do
