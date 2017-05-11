@@ -23,7 +23,7 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe "POST create" do
-    it "returns and http redirect" do
+    it "returns an http redirect" do
       post :create, user: new_user_attributes
       expect(response).to have_http_status(:redirect)
     end
@@ -49,4 +49,5 @@ RSpec.describe UsersController, type: :controller do
       expect(assigns(:user).password).to eq new_user_attributes[:password]
     end
   end
+
 end
