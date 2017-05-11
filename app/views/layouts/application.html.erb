@@ -16,7 +16,13 @@
 
       <div class="pull-right user-info">
         <% if current_user %>
-          <%= current_user.name%> - <%= link_to "Sign Out", session_path(current_user), method: :delete %>
+          <div class="user-name">
+            <%= current_user.name %><br>
+            <%= link_to "Sign Out", session_path(current_user), method: :delete %>
+          </div>
+          <div class="pull-right">
+           <%=image_tag avatar_url(current_user) %>  <!-- I found the right spot but I couldn't get the image to show. I didn't add (current_user) after avatar_url -->
+         </div>
         <% else %>
           <%= link_to "Sign In", new_session_path %> or
           <%= link_to "Sign Up", new_user_path %>
