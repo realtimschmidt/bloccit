@@ -373,7 +373,7 @@ RSpec.describe PostsController, type: :controller do
 
   context "moderator doing CRUD on a post they don't own" do
     before do
-      other_user.admin!
+      other_user.moderator!
       create_session(other_user)
     end
 
