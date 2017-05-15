@@ -1,8 +1,8 @@
 <h2>Sign Up Confirmation</h2>
 
 <h4>Are you sure these values are correct?</h4>
-<p>Email: <% @user.email %></p>
-<p>Name: <% @user.name %></p>
+<p>Email: <%= @user.email %></p>
+<p>Name: <%= @user.name %></p>
 <div class="row">
   <div class="col-md-4", style="width: auto;"> <!-- I used the styling from the video -->
     <%= button_to "Yes", {controller: "users", action: "create", params: params}, class: 'btn btn-success' %>
