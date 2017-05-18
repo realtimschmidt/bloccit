@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   has_many :votes, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :favorite_posts, through: :favorites, source: :post
 
   before_save { self.email = email.downcase if email.present? }
   before_save { self.role ||= :member }
@@ -27,4 +28,9 @@ class User < ActiveRecord::Base
     gravatar_id = Digest::MD5::hexdigest(self.email).downcase
     "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}"
   end
+
+#  def avatar_author(size)
+#    gravatar_author = Digest::MD5::hexdigest(@post.user.email).downcase
+#    "http://gravatar.com/avatar/#{gravatar_author}.png?s=#{size}"
+#  end
 end
