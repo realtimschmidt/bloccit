@@ -2,7 +2,7 @@
 A Reddit replica to teach the fundamentals of web development and Rails.
 
 # Prerequisites
-Ruby, Rails, Rspec, understanding of MVC, understanding of CRUD
+Ruby, Rails, Rspec, understanding of MVC, understanding of CRUD.
 
 Be sure to checkout the Gemfile and install the same Gems before starting.
 
